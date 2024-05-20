@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bling Bling Nail Studio Chantal</h1>
+    <form onsubmit="setTimestamp()">
+<form>
+<label for="nailColor1">kies 4 basiskleuren voor uw nagels:</label><br>
+<input type="color" value="#ff0000" id="nailColor1" /><br>
+
+<label for="nailColor2"></label>
+<input type="color" value="#00ff00" id="nailColor2" /><br>
+
+<label for="nailColor3"></label>
+<input type="color" value="#0000ff" id="nailColor3" /><br>
+
+<label for="nailColor4"></label>
+<input type="color" value="#ffff00" id="nailColor4" /><br>
+
+<label for="telefoonnummer">Uw Telefoonnummer:</label><br>
+<input type="tel" id="telefoonnummer" name="telefoonnummer" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="+31 6 2570 51 41" title="Voer uw telefoonnummer in volgens het volgende formaat: XXX-XX-XXX"> <br>
+
+<label for="emailadres">Uw E-mailadres:</label><br>
+<input type="email" id="emailadres" name="emailadres" required placeholder="voorbeeld@voorbeeld.nl"><br>
+
+<label for="afspraak">Afspraak datum:</label><br>
+<input type="datetime-local" id="afspraak" name="afspraak" required><br>
+
+<label for="soort-behandeling-1">nagelbijt arrangement (termijnbetaling mogelijk) $180</label>
+<input type="checkbox" id="soort-behandeling-1" name="soort-behandeling-1" value="optie1">
+<br>
+<label for="soort-behandeling-2">luxe manicure (massage en handpakking) $30,00</label>
+<input type="checkbox" id="soort-behandeling-2" name="soort-behandeling-2" value="optie2">
+<br>
+<label for="soort-behandeling-3">Nagelreparatie per nagel (in eerste week gratis) $5,00</label>
+<input type="checkbox" id="soort-behandeling-3" name="soort-behandeling-3" value="optie3"><br>
+
+    <input type="reset" value="Reset"><br>
+
+    <input type="hidden" id="timestamp" name="timestamp">
+    <input type="submit" value="Verzenden">
+
+    <script>
+        function setTimestamp() {
+          var now = new Date();
+          var timestamp = now.getFullYear() + '-' +
+                          ('0' + (now.getMonth() + 1)).slice(-2) + '-' +
+                          ('0' + now.getDate()).slice(-2) + ' ' +
+                          ('0' + now.getHours()).slice(-2) + ':' +
+                          ('0' + now.getMinutes()).slice(-2) + ':' +
+                          ('0' + now.getSeconds()).slice(-2);
+          document.getElementById('timestamp').value = timestamp;
+        }
+      </script>
+      
+  </form>
+</form>
+</body>
+</html>
